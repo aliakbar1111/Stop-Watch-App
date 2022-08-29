@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".CrateMassageActivity">
+
+    <EditText
+        android:id="@+id/massage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/enter_msg"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="200dp"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/send_msg"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="5dp"
+        android:id="@+id/sendMassage"
+        />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/share_masg"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="5dp"
+        android:id="@+id/shareMassage"
+        />
+
+
+</LinearLayout>

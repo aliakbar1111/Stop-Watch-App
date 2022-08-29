@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Head First</string>
+    <string name="brands">no beer found</string>
+    <string name="find_beer">Find Beer</string>
+    <string name="second_app"> second app</string>
+    <string name="enter_msg">Enter A Massage</string>
+    <string name="send_msg">Send Massage</string>
+    <string name="share_masg">Share Text</string>
+    <string name="reset">Reset</string>
+    <string name="stop">Stop</string>
+    <string name="start">Start</string>
+    <string name="SEND_mas_via..">send message via…</string>
+    <string name="go_to_third_aoo">Go To Third Aoo</string>
+
+    <string-array name="beer_colors">
+        <item>light</item>
+        <item>amber</item>
+        <item>brown</item>
+        <item>dark</item>
+    </string-array>
+</resources>
