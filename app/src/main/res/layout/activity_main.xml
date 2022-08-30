@@ -41,7 +41,14 @@
     android:layout_gravity="center_horizontal"
     android:text="@string/second_app"
     android:id="@+id/seconApp"
-
     />
+    <Button
+        android:id="@+id/go_to_stopWatch_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Stop Watch Activity"
+        android:layout_gravity="bottom|end"
+        android:layout_marginTop="280dp"
+        />
 
 </LinearLayout>
