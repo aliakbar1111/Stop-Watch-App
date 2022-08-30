@@ -1,5 +1,6 @@
 package com.iqama.headfirst;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
@@ -8,25 +9,45 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.iqama.headfirst.databinding.ActivityStopWatchBinding;
+
 import java.util.Locale;
 
 public class StopWatch extends AppCompatActivity {
 
     private int seconds =0;
     private boolean isRunning;
-    TextView watch_View;
+
+    ActivityStopWatchBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         Button startB, stopB, resetB;
-
+        binding = ActivityStopWatchBinding.inflate(getLayoutInflater());
+        View view = binding.getRoot();
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_stop_watch);
-        watch_View = findViewById(R.id.time_view);
+        setContentView(view);
+
+        if (savedInstanceState!= null){
+            seconds = savedInstanceState.getInt("second");
+            isRunning = savedInstanceState.getBoolean("running");
+        }
+
         runTime();
 
     }
 
+    @Override
+    protected void onPause() {
+        super.onPause();
+      isRunning = false;
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        isRunning = true;
+    }
 
     public void onClickStart(View view) {
         isRunning = true;
@@ -52,7 +73,7 @@ public class StopWatch extends AppCompatActivity {
                     int secs = seconds%60;
                     String time = String.format(Locale.getDefault(),
                             "%d:%02d:%02d", hours, minutes, secs);
-                        watch_View.setText(time);
+                        binding.timeView.setText(time);
                         if (isRunning){
                             seconds ++;
                         }
@@ -62,5 +83,11 @@ public class StopWatch extends AppCompatActivity {
         });
     }
 
+    @Override
+    protected void onSaveInstanceState(@NonNull Bundle outState) {
 
+        outState.putInt("second",seconds);
+        outState.putBoolean("running",isRunning);
+        super.onSaveInstanceState(outState);
+    }
 }
